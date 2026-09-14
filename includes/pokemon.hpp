@@ -18,6 +18,7 @@ public:
     Pokemon(const Pokemon& other);
     ~Pokemon();
 
+    int get_id() const;
     string get_name() const;
     int get_hit_points() const;
     int get_attack() const;

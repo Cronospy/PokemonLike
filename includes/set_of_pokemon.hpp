@@ -10,8 +10,8 @@ class SetOfPokemon {
 
         void display_all_pokemon();
 
-        virtual Pokemon get_by_name(std::string name) = 0;
-        virtual Pokemon get_by_id(int id) = 0;
+        Pokemon* get_by_name(std::string name);
+        Pokemon* get_by_id(int id);
         virtual ~SetOfPokemon() = default;
 };
 

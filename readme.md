@@ -8,5 +8,5 @@ Le diagramme de Classe
 
 Comment l'utiliser 
 
-Ce qui marche et ce qui marche pas 
+Ce qui marche et ce qui marche pas
 

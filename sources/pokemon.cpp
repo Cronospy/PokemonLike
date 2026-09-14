@@ -12,6 +12,10 @@ Pokemon::Pokemon(const Pokemon& other)
 
 Pokemon::~Pokemon() = default;
 
+int Pokemon::get_id() const {
+    return id;
+}
+
 string Pokemon::get_name() const {
     return name;
 }
