@@ -1,17 +1,22 @@
-#include "../includes/pokedex.h"
+#include "../includes/pokedex.hpp"
+#include "../includes/setup.h"
 
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 
-/*
-Pokedex::Pokedex(string fileName):SetOfPokemon() {
+pokedex* pokedex::instance = nullptr;
 
-    std::cout << "*** Constructeur du Pokedex ***" << std::endl;
+pokedex::pokedex():set_of_pokemon() {
 
-    std::ifstream file(fileName);
+    std::cout << "*** Constructeur du pokedex ***" << std::endl;
+
+    string file_name = CSV_POKEDEX_FILE;
+
+    std::ifstream file(file_name);
     if(!file.is_open()){
-        std::cerr<<"File "<<fileName<<" not found "<<std::endl;
+        std::cerr<<"File "<<file_name<<" not found "<<std::endl;
         return;
     }
 
@@ -26,13 +31,22 @@ Pokedex::Pokedex(string fileName):SetOfPokemon() {
         while(std::getline(inputstringstream,cell,',')){
             lineData.push_back(cell);
         }
+
         int id = std::stoi(lineData.at(0));
-        double attackValue = std::stod(lineData.at(6));
-        double hitPoint = std::stod(lineData.at(5));
-        double defenseValue = std::stod(lineData.at(7));
+        string name = lineData.at(1);
+        int attack = std::stoi(lineData.at(6));
+        int max_hit_point = std::stoi(lineData.at(5));
+        int defense = std::stoi(lineData.at(7));
         int generation = std::stoi(lineData.at(11));
 
-        arrayOfPokemon.push_back(new Pokemon(lineData.at(1),id,hitPoint,attackValue,
-                                             defenseValue,generation));
+        array_of_pokemons.push_back(new pokemon(id,name,max_hit_point,attack,defense,generation));
     }
-}*/
+    instance = this;
+}
+
+pokedex* pokedex::get_instance() {
+    if (instance==nullptr) {
+        instance = new pokedex();
+    }
+    return instance;
+}

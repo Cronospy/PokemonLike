@@ -2,11 +2,8 @@ Florent NASSCHAERT
 
 ### Read Me
 
-Ce qui a dedans 
+La classe pokedex est fonctionnel (design patern : Singleton).
 
-Le diagramme de Classe 
 
-Comment l'utiliser 
-
-Ce qui marche et ce qui marche pas
-
+Vous pouvez lancer le main, vous pourrez choisir entre 3 pokémon commencer votre aventure.
+Et ensuite, le jeu affichera votre équipe.

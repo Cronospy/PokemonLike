@@ -1,18 +1,22 @@
 #include <iostream>
 
-#include "../includes/GameEngine.h"
+#include "../includes/game_engine.hpp"
 
-void GameEngine::startGame() {
+#include "../includes/pokedex.hpp"
+
+void game_engine::start_game() {
     std::cout << "*------------ New Game ------------*" << std::endl;
 
-    chooseStarterPokemon();
+    choose_starter_pokemon();
 
+    std::cout << "*----------- Your Team: -----------*" << std::endl;
+    pokemon_team.display_pokemon_team();
 }
 
-void GameEngine::chooseStarterPokemon() {
+void game_engine::choose_starter_pokemon() {
     std::cout << "*------ Choose Your Starter! ------*" << std::endl;
 
-    std::vector<Pokemon*> pokemons = selectStarterPokemon();
+    std::vector<pokemon*> pokemons = select_starter_pokemon();
 
     //Selection
     int index;
@@ -23,21 +27,21 @@ void GameEngine::chooseStarterPokemon() {
     }while (index < 0 || index > pokemons.size()-1);
 
     //Ajout à l'equipe
+    pokemon_team.add_pokemon(pokemons.at(index));
     std::cout << pokemons.at(index)->get_name() + " Added To Your Team!"  <<std::endl;
 
     //Fin
     std::cout << "*-----------------------------------*" << std::endl;
 }
 
-std::vector<Pokemon*> GameEngine::selectStarterPokemon() {
+std::vector<pokemon*> game_engine::select_starter_pokemon() {
     //Prise de trois pokemon au hasard et affichage 1 2 3 pour la selection derierre
-    Pokemon pikachu(25, "Pikachu", 35, 55, 40, 1);
-    Pokemon mustebouee(418, "Mustebouee",55, 65,35,4);
-    Pokemon etourmi(396, "Etourmi",40, 55,30,4);
-    std::vector<Pokemon*> pokemons = {&pikachu, &mustebouee, &etourmi};
+    auto pokedex = pokedex::get_instance();
+    
+    std::vector<pokemon*> pokemons = {pokedex->get_by_id(25),pokedex->get_by_id(418),pokedex->get_by_id(396),};
 
     for (int i = 0; i < pokemons.size(); i++) {
-        std::cout << i+1 << ": " << pokemons.at(i)->get_name() << std::endl;
+        std::cout << i+1 << ": " << pokemons.at(i)->info_short() << std::endl;
     }
 
     return pokemons ;

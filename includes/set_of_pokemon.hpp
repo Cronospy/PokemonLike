@@ -1,17 +1,18 @@
+#pragma once
 #include <vector>
 
 #include "pokemon.hpp"
 
-class SetOfPokemon {
+class set_of_pokemon {
     public:
-        std::vector<Pokemon*> arrayOfPokemons;
+        std::vector<pokemon*> array_of_pokemons;
 
-        SetOfPokemon();
+        set_of_pokemon();
 
         void display_all_pokemon();
 
-        Pokemon* get_by_name(std::string name);
-        Pokemon* get_by_id(int id);
-        virtual ~SetOfPokemon() = default;
+        pokemon* get_by_name(std::string name);
+        pokemon* get_by_id(int id);
+        virtual ~set_of_pokemon() = default;
 };
 

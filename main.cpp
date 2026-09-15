@@ -1,45 +1,13 @@
 #include <iostream>
-#include <ostream>
 
-#include "includes/GameEngine.h"
-
-/*int main() {
-    std::cout << "*------------Pokemon 1-------------*" << std::endl;
-
-    Pokemon pikachu(25, "Pikachu", 35, 55, 40, 1);
-    pikachu.displayInfo();
-
-    std::cout << "*------------Pokemon 2-------------*" << std::endl;
-
-    Pokemon mustebouee(418, "Mustébouée",55, 65,35,4);
-    mustebouee.displayInfo();
-
-    std::cout << "*----------------------------------*" << std::endl;
-
-    //Pokemon pikachuCopy(pikachu);
-    //pikachuCopy.displayInfo();
-
-    std::cout << "*----Mustébouée attack Pikachu----*" << std::endl;
-
-    mustebouee.attack_on(pikachu);
-    std::cout << "Pikachu Hit Point:" + std::to_string(pikachu.get_hit_points()) << std::endl;
-
-    std::cout << "*----Mustébouée attack Pikachu----*" << std::endl;
-
-    mustebouee.attack_on(pikachu);
-    std::cout << "Pikachu Hit Point:" + std::to_string(pikachu.get_hit_points()) << std::endl;
-
-    std::cout << "*----------------------------------*" << std::endl;
-
-    return 0;
-}
-*/
+#include "includes/game_engine.hpp"
+#include "includes/pokedex.hpp"
 
 int main() {
-    GameEngine engine;
-    engine.startGame();
+    auto _ = pokedex::get_instance();
+    game_engine engine;
+    engine.start_game();
     return 0;
-
 }
 
 /*#include <SFML/Graphics.hpp>

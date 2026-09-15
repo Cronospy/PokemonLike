@@ -1,9 +1,10 @@
+#pragma once
 #include <string>
 using std::string;
 
 // Commentary to describe the Pokemon class
 
-class Pokemon {
+class pokemon {
 private:
     int id;
     string name;
@@ -14,9 +15,9 @@ private:
     int generation;
 
 public:
-    Pokemon(int id, const string& name,int max_hit_points, int attack, int defense, int generation);
-    Pokemon(const Pokemon& other);
-    ~Pokemon();
+    pokemon(int id, const string& name,int max_hit_points, int attack, int defense, int generation);
+    pokemon(const pokemon& other);
+    ~pokemon();
 
     int get_id() const;
     string get_name() const;
@@ -26,8 +27,8 @@ public:
 
     void set_hit_points(int hit_points);
 
-    void displayAll() const;
-    void displayShort() const;
-    void attack_on(Pokemon& pokemon_attacked) const;
+    void display_all() const;
+    string info_short() const;
+    void attack_on(pokemon& pokemon_attacked) const;
     void full_heal();
 };

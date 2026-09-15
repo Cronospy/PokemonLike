@@ -1,17 +1,17 @@
 #include "../includes/set_of_pokemon.hpp"
 
-SetOfPokemon::SetOfPokemon() {
-    arrayOfPokemons = {};
+set_of_pokemon::set_of_pokemon() {
+    array_of_pokemons = {};
 };
 
-void SetOfPokemon::display_all_pokemon() {
-    for (Pokemon* pokemon: arrayOfPokemons) {
-        pokemon->displayAll();
+void set_of_pokemon::display_all_pokemon() {
+    for (pokemon* pokemon: array_of_pokemons) {
+        pokemon->display_all();
     }
 }
 
-Pokemon* SetOfPokemon::get_by_id(int id) {
-    for (Pokemon* pokemon: arrayOfPokemons) {
+pokemon* set_of_pokemon::get_by_id(int id) {
+    for (pokemon* pokemon: array_of_pokemons) {
         if (pokemon->get_id() == id) {
             return pokemon;
         }
@@ -19,8 +19,8 @@ Pokemon* SetOfPokemon::get_by_id(int id) {
     return nullptr;
 }
 
-Pokemon* SetOfPokemon::get_by_name(std::string name) {
-    for (Pokemon* pokemon: arrayOfPokemons) {
+pokemon* set_of_pokemon::get_by_name(std::string name) {
+    for (pokemon* pokemon: array_of_pokemons) {
         if (pokemon->get_name() == name) {
             return pokemon;
         }

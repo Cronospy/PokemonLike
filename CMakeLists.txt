@@ -9,6 +9,9 @@ add_executable(PokemonLike main.cpp
         sources/set_of_pokemon.cpp
         includes/set_of_pokemon.hpp
         sources/pokedex.cpp
-        includes/pokedex.h
-        sources/GameEngine.cpp
-        includes/GameEngine.h)
+        includes/pokedex.hpp
+        sources/game_engine.cpp
+        includes/game_engine.hpp
+        includes/setup.h
+        sources/pokemon_team.cpp
+        includes/pokemon_team.hpp)
