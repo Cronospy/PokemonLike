@@ -1,5 +1,5 @@
-#include "../includes/pokedex.hpp"
-#include "../includes/setup.h"
+#include "../../includes/sets_of_pokemon/pokedex.hpp"
+#include "../../includes/setup.h"
 
 #include <fstream>
 #include <iostream>

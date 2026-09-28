@@ -1,4 +1,4 @@
-#include "../includes/set_of_pokemon.hpp"
+#include "../../includes/sets_of_pokemon/set_of_pokemon.hpp"
 
 set_of_pokemon::set_of_pokemon() {
     array_of_pokemons = {};

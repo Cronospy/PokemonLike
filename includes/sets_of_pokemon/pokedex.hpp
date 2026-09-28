@@ -1,11 +1,14 @@
 #pragma once
 #include "set_of_pokemon.hpp"
+#include <memory>
 
 class pokedex : public set_of_pokemon{
     private:
-        std::vector<pokemon> pokemons_list;
         static pokedex* instance;
         pokedex();
     public:
         static pokedex *get_instance();
+
+        pokemon get_by_id(int id) override;
+        pokemon get_by_name(const std::string& name) override;
 };

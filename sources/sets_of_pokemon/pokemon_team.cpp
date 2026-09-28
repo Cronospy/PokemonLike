@@ -1,4 +1,4 @@
-#include "../includes/pokemon_team.hpp"
+#include "../../includes/sets_of_pokemon/pokemon_team.hpp"
 
 #include <algorithm>
 #include <iostream>

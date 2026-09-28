@@ -1,5 +1,5 @@
 #pragma once
-#include "pokemon.hpp"
+#include "../pokemon.hpp"
 #include "set_of_pokemon.hpp"
 
 /*
@@ -10,7 +10,7 @@
 class pokemon_team : public set_of_pokemon {
     public:
         pokemon_team() = default;
-        void add_pokemon(pokemon* pokemon);
-        void remove_pokemon(pokemon* pokemon);
+        void add_pokemon(const pokemon& pokemon);
+        void remove_pokemon(const pokemon& pokmeon_to_remove);
         void display_pokemon_team();
 };
