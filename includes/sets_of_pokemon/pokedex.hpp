@@ -11,4 +11,6 @@ class pokedex : public set_of_pokemon{
 
         pokemon get_by_id(int id) override;
         pokemon get_by_name(const std::string& name) override;
+
+        pokemon get_random_pokemon() const;
 };

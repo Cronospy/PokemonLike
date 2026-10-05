@@ -4,12 +4,14 @@ class game_engine;
 
 class game_states {
     protected:
-        game_engine* game_engine = nullptr;
-    public:
-        virtual ~game_states()= default;
+        game_engine* engine = nullptr;
 
-        void set_game_engine(class game_engine* game_engine);
+    public:
+        virtual ~game_states() = default;
+
+        void set_engine(game_engine* engine);
 
         virtual void update() = 0;
         virtual void render() = 0;
 };
+

@@ -1,6 +1,7 @@
 #pragma once
 #include "game_states.hpp"
 #include "../widgets/button.hpp"
+#include "../game_engine.hpp"
 #include <SFML/Graphics.hpp>
 #include <memory>
 

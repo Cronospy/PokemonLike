@@ -12,5 +12,6 @@ class pokemon_team : public set_of_pokemon {
         pokemon_team() = default;
         void add_pokemon(const pokemon& pokemon);
         void remove_pokemon(const pokemon& pokmeon_to_remove);
-        void display_pokemon_team();
+        void heal_all_pokemons();
+
 };

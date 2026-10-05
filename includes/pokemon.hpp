@@ -25,6 +25,7 @@ class pokemon {
         int get_id() const;
         string get_name() const;
         int get_hit_points() const;
+        int get_max_hit_points() const;
         int get_attack() const;
         int get_defense() const;
 

@@ -1,31 +1,26 @@
 #pragma once
-#include <vector>
 
 #include "player.hpp"
-#include "pokemon.hpp"
-#include "game_states/game_states.hpp"
-#include "sets_of_pokemon/pokemon_team.hpp"
 #include "SFML/Graphics/RenderWindow.hpp"
+
+class game_states;
 
 class game_engine {
     private:
-        game_states* game_state;
+        std::unique_ptr<game_states> current_state;
+        std::unique_ptr<game_states> pending_state;
         player current_player;
-        sf::RenderWindow* window;
+        sf::RenderWindow* window = nullptr;
 
     public:
-        game_engine(game_states *game_state, sf::RenderWindow *window);
+        game_engine(std::unique_ptr<game_states> initial_state, sf::RenderWindow *window);
 
         void update();
         void render();
 
-        void set_game_state(game_states* state);
+        void set_game_state(std::unique_ptr<game_states> new_state);
 
         sf::RenderWindow* get_window();
-        void start_game();
-        void choose_starter_pokemon();
-
-        std::vector<pokemon> select_starter_pokemon();
 
         player* get_player();
 };

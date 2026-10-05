@@ -9,7 +9,7 @@ using namespace sf;
 class starter_state : public game_states {
     private:
         Texture background_texture;
-        Font title_font;
+        Font instruction_font;
 
         std::vector<std::unique_ptr<pokemon_choice_button>> starter_buttons;
 
