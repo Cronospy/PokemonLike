@@ -1,5 +1,5 @@
-//
-// Created by florent on 18/09/2026.
-//
+#include "../../includes/game_states/game_states.hpp"
 
-#include "../../includes/game_states/game_state.hpp"
+void game_states::set_engine(game_engine* engine) {
+    this->engine = engine;
+}

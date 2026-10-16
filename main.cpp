@@ -1,35 +1,29 @@
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 #include "includes/game_engine.hpp"
-#include "includes/pokedex.hpp"
+#include "includes/game_states/menu_state.hpp"
 
-int main() {
-    auto _ = pokedex::get_instance();
-    game_engine engine;
-    engine.start_game();
-    return 0;
-}
+using namespace sf;
 
-/*#include <SFML/Graphics.hpp>
+int main()
+{
+    // SFML Config
+    RenderWindow window( sf::VideoMode( { 1200, 800 } ), "Pokemon Like - IS" );
+    window.setVerticalSyncEnabled(true);
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Hello SFML 3");
-
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    // Game Config
+    auto* engine = new game_engine(std::make_unique<menu_state>(), &window);
 
     while (window.isOpen()) {
-
-        // Nouveau système d'événements SFML 3
-        while (auto event = window.pollEvent()) {
+        while (const std::optional<sf::Event> event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
-
-        window.clear(sf::Color::Black);
-        window.draw(shape);
+        engine->update();
+        window.clear();
+        engine->render();
         window.display();
     }
-
     return 0;
-}*/
+}

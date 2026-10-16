@@ -8,7 +8,7 @@ pokemon::pokemon(int id, const string& name,int max_hit_points,  int attack, int
     : id(id), name(name), hit_points(max_hit_points), max_hit_points(max_hit_points), attack(attack), defense(defense), generation(generation) {}
         
 pokemon::pokemon(const pokemon& other)
-    : id(other.id), name(other.name), hit_points(other.max_hit_points), max_hit_points(max_hit_points), attack(other.attack), defense(other.defense), generation(other.generation) {}
+    : id(other.id), name(other.name), hit_points(other.hit_points), max_hit_points(other.max_hit_points), attack(other.attack), defense(other.defense), generation(other.generation) {}
 
 pokemon::~pokemon() = default;
 
@@ -22,6 +22,10 @@ string pokemon::get_name() const {
 
 int pokemon::get_hit_points() const {
     return hit_points;
+}
+
+int pokemon::get_max_hit_points() const {
+    return max_hit_points;
 }
 
 int pokemon::get_attack() const {
